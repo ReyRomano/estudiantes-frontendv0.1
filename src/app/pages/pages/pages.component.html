@@ -1,0 +1,51 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="">
+
+    <div class="container-fluid">
+        <div class="">
+            <div class="text-center">
+                <mat-toolbar color="primary">
+                    <mat-toolbar-row>
+                      <span>BD de Estudiantes</span>
+                    </mat-toolbar-row>
+                </mat-toolbar>
+            </div>
+
+            <!--    Breadcrumbs -->
+            <!-- <app-breadcrumbs></app-breadcrumbs> -->
+
+            <!--    Mi sistema de Rutas -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- This is some text within a card block. -->
+                            <router-outlet></router-outlet>                           
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- footer -->
+                    <!-- ============================================================== -->
+                    <footer class="footer espacio">
+                        <!-- © 2017 Admin Pro by wrappixel.com -->
+                        © 2023 Estudiantes DB
+                    </footer>
+                    <!-- ============================================================== -->
+                    <!-- End footer -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+
+        </div>
+             
+    </div>
+    
+</div>

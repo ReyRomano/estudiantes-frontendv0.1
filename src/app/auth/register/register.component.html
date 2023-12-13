@@ -1,0 +1,96 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar" style="background-image:url(../assets/images/background/login-register.jpg);">
+    <div class="login-box card">
+        <div class="card-body  mat-table">
+
+            <form class="form-horizontal form-material" 
+            id="loginform" 
+            autocomplete="off"
+            [formGroup]="registerForm"
+            (ngSubmit)="crearEstudiante()">
+
+                <a href="javascript:void(0)" class="text-center db"><img src="../assets/images/logo-icon.png" alt="Home" /></a>
+                <h3 class="box-title m-t-40 m-b-0">Nuevo Estudiante</h3><small>Llena datos del estudiante,<br>Nota: el ID se generará automáticamente</small>
+                <div class="form-group m-t-20">
+                    <div class="col-xs-12">
+
+                        <input class="form-control" 
+                        type="text"
+                        placeholder="Name"
+                        formControlName="nombre">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-danger">
+
+                        <p *ngIf="campoNoValido('nombre')">*El nombre es obligatorio</p>
+                    </div>
+                </div>
+
+                <div class="form-group m-t-20">
+                    <div class="col-xs-12">
+
+                        <input class="form-control" 
+                        type="text"
+                        placeholder="telephone"
+                        formControlName="telefono">
+                    </div>
+                </div>
+                <div class="form-group m-t-20">
+                    <div class="col-xs-12">
+
+                        <input class="form-control" 
+                        type="text"
+                        placeholder="e-mail"
+                        formControlName="email">
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" 
+                        type="number" 
+                        placeholder="age"
+                        formControlName="edad">
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" 
+                        type="text" 
+                        placeholder="Status"
+                        formControlName="estatus">
+                    </div>
+                </div>
+
+                <!--  Asignaturas   -->
+                <div class="col-xs-12">
+                    <h3>Asignaturas:</h3>
+                    <small>Debe ser x ID,<br>*Nota: No Editar si no lo tiene aún</small>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" 
+                        type="text" 
+                        placeholder="signatures"
+                        formControlName="asignaturas">
+                    </div>
+                </div>
+
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" 
+                        type="submit">Crear Estudiante</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

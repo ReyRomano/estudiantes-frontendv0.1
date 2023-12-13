@@ -1,0 +1,168 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Editando un Estudiante:</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+
+<mat-card>
+    <mat-card-content>
+        <div>
+            <h3>Editar Estudiante: {{ infoEstudiante._id }} - {{ infoEstudiante.nombre }}</h3>
+            <mat-divider class="colorDivider"></mat-divider>
+        </div>
+        &nbsp;
+
+        <!--    -----------------------------   Inicio  formulario --------------------     -->
+
+        <div class="col-12">
+
+        <form class="example-form"
+            id="editarform"
+            autocom="off"
+            [formGroup]="editarEstudianteForm"
+            (ngSubmit)="editarEstudiantePorId">
+            <mat-form-field class="example-full-width">
+              <mat-label>Id (no se puede cambiar)</mat-label>
+              <input matInput disabled value="{{infoEstudiante._id}}">
+            </mat-form-field>
+
+           <div class="row">
+            <div class="col-3">
+
+                <mat-form-field appearance="fill">
+                  <mat-label>{{infoEstudiante.nombre}}</mat-label>
+                  <input matInput placeholder="Nuevo Nombre" 
+                        type="text" 
+                        formControlName="nombre"
+                        value="{{infoEstudiante.nombre}}">
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  <mat-hint>Nombre</mat-hint>
+                </mat-form-field>
+            </div>
+            
+            <div class="col-4"></div>  
+            <div class="col-3">
+
+                <mat-form-field appearance="fill">
+                  <mat-label>{{infoEstudiante.telefono}}</mat-label>
+                  <input matInput placeholder="Nuevo Telefono"
+                        type="text" 
+                        formControlName="telefono"
+                        value="{{infoEstudiante.telefono}}">
+                  <mat-icon matSuffix>phone</mat-icon>
+                  <mat-hint>Teléfono</mat-hint>
+                </mat-form-field>
+            </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-3">
+    
+                    <mat-form-field appearance="fill">
+                      <mat-label>{{infoEstudiante.email}}</mat-label>
+                      <input matInput placeholder="Nuevo Email"
+                        type="text" 
+                        formControlName="email"
+                        value="{{infoEstudiante.email}}">
+                      <mat-icon matSuffix>account_circle</mat-icon>
+                      <mat-hint>E-mail</mat-hint>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-4"></div>  
+                <div class="col-3">
+    
+                    <mat-form-field appearance="fill">
+                      <mat-label>{{infoEstudiante.edad}}</mat-label>
+                      <input matInput placeholder="Nueva edad"
+                        type="text" 
+                        formControlName="edad"
+                        value="{{infoEstudiante.edad}}">
+                      <mat-hint>edad</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+    
+                    <mat-form-field appearance="fill">
+                      <mat-label>{{infoEstudiante?.asignaturas?._id}}</mat-label>
+                      <input matInput placeholder="Nuevo Id Asignaturas"
+                        type="text" 
+                        formControlName="asignaturas"
+                        value="{{infoEstudiante.asignaturas?._id}}">
+                      <mat-icon matSuffix>description</mat-icon>
+                      <mat-hint>id asignaturas</mat-hint>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-4"></div>  
+                <div class="col-3">
+    
+                    <mat-form-field appearance="fill">
+                      <mat-label>{{infoEstudiante.estatus}}</mat-label>
+                      <input matInput placeholder="Nuevo Estatus"
+                        type="text" 
+                        formControlName="estatus"
+                        value="{{infoEstudiante.estatus}}">
+                      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                      <mat-hint>Estatus</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="espacio col-6">
+                <p>Calificaciones</p>
+                <mat-divider class="colorDivider"></mat-divider>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+    
+                    <mat-form-field appearance="fill" class="table">
+                        <mat-label>Asignaturas Actuales</mat-label>
+                        <input matInput disabled value="Esp: {{infoEstudiante.asignaturas?.espanol}} , mate: {{infoEstudiante.asignaturas?.matematicas}} , Depo: {{infoEstudiante.asignaturas?.deportes}}">
+                      </mat-form-field>
+                </div>
+
+                <div class="col-2"></div> 
+
+                <div class="col-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Outline form field</mat-label>
+                        <input matInput placeholder="Placeholder">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Otro formato de input</mat-hint>
+                    </mat-form-field>
+
+                </div>
+            </div>
+
+            <!--    -----------------------------   Fin  formulario --------------------     -->
+
+            <div class="row">                
+                    <div class="col-xs-12">
+                        <button mat-raised-button color="primary" (click)="editarEstudiantePorId()">
+                          Editar Estudiante
+                          <!-- <a href="/estudiantes">Ver Estudiantes</a> -->
+                          <!-- <a routerLink="/estudiantes">Ver Estudiantes</a> -->
+                        </button>
+                    </div>                
+            </div>             
+
+        </form>
+
+    </div>
+    
+        <div class="form-group m-b-0">
+            <div class="col-sm-12 text-center">
+
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>

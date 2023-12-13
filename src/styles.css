@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.example-icon {
+    padding: 0 24px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .espacio {
+    padding: 20px;
+  }
+
+  .demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .example-form-field {
+    width: 775px;
+  }
+
+/* TABLA */
+  /* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto; /*Ancho de tabla  */
+  max-height: auto; /*Largo de tabla */
+}
+
+
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+example-full-width {
+  width: 100%;
+}
+
+/*  Formulario:  */
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.td {
+  padding-right: 8px;
+}
+
+.pequeno {
+  width: 150px;
+}
+

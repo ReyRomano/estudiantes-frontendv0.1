@@ -1,0 +1,178 @@
+<div>
+  <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>Estudiantes Registrados:</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<mat-card>
+    <mat-card-content *ngIf="cargando">
+      Cargando favor d esperar
+    </mat-card-content>
+</mat-card>
+
+<div class="row">
+
+  <div class="col-2">
+    
+  </div>
+</div>
+
+<div>
+
+<mat-card *ngIf="!cargando">
+<mat-card-content>
+
+  <div class="example-container mat-elevation-z8 table example-form-field example-header mat-form-field mat-table">
+    
+    <div class="text-right">
+      <button mat-raised-button color="primary" routerLink="/register">Crear estudiante</button>
+    </div>
+
+  <table>
+    <tr>
+      <h2>Estudiantes ( {{ estudiantes.length }} )</h2>
+    </tr>
+
+  
+    <tr>
+      <th class="espacio text-center">Id</th>
+  
+      <th class="espacio text-center">Nombre</th>
+  
+      <th class="espacio text-center">Tel</th>
+      <th class="espacio text-center">E-mail</th>
+  
+      <th class="espacio text-center">Edad</th>
+  
+      <th class="espacio text-center">Estatus</th>
+      <th class="espacio text-center">Asignaturas</th>
+    </tr>
+
+    <tr *ngFor="let estudiante of estudiantes">
+  
+      <td class="espacio">{{estudiante._id}}</td>
+  
+      <td class="espacio" >
+        <input matInput
+          class="example-full-width"
+          type="text" 
+          placeholder="Nombre de estudiante" 
+          [(ngModel)]="estudiante.nombre"/>
+          <!-- value="{{estudiante.nombre}}"> -->
+
+        <div>
+
+          <!--  Mandando estudiante a través de un botón  -->
+          <a mat-button (click)="guardarCambios(estudiante)"> 
+            Renombrar
+          </a>
+  
+         </div>
+
+      </td>
+  
+      <td class="espacio">  <!--  {{estudiante.telefono}} -->
+        <input matInput
+          class="example-full-width"
+          type="text" 
+          placeholder="Telefono de estudiante" 
+          [(ngModel)]="estudiante.telefono"/>
+
+        <div>
+
+          <!--  Mandando estudiante a través de un botón  -->
+          <a mat-button (click)="guardarCambios(estudiante)"> 
+            Actualizar
+          </a>
+  
+         </div>
+      </td>
+  
+      <td class="espacio">  <!-- {{estudiante.email}}-->
+        <input matInput
+        class="example-full-width"
+        type="text" 
+        placeholder="E-mail de estudiante" 
+        [(ngModel)]="estudiante.email"/>
+
+      <div>
+
+        <!--  Mandando estudiante a través de un botón  -->
+        <a mat-button (click)="guardarCambios(estudiante)"> 
+          Actualizar
+        </a>
+
+       </div>
+      </td>
+  
+      <td class="espacio">  <!--  {{estudiante.edad}} -->
+        <input matInput
+        class="example-full-width"
+        type="text" 
+        placeholder="Edad de estudiante" 
+        [(ngModel)]="estudiante.edad"/>
+
+      <div>
+
+        <!--  Mandando estudiante a través de un botón  -->
+        <a mat-button (click)="guardarCambios(estudiante)"> 
+          Cambiar
+        </a>
+
+       </div>
+
+      </td>
+  
+      <td class="espacio">  <!--  {{estudiante.estatus}}  -->
+        <input matInput
+        class="example-full-width"
+        type="text" 
+        placeholder="Estatus de estudiante" 
+        [(ngModel)]="estudiante.estatus"/>
+
+      <div>
+
+        <!--  Mandando estudiante a través de un botón  -->
+        <a mat-button (click)="guardarCambios(estudiante)"> 
+          Cambiar
+        </a>
+
+       </div>
+      </td>
+  
+      <td class="espacio">Esp: {{estudiante?.asignaturas?.espanol}}
+                          mate: {{estudiante?.asignaturas?.matematicas}}
+                          Deportes: {{estudiante?.asignaturas?.deportes}}
+                          <!-- Si existe Asignatura: -->
+                          <div *ngIf="estudiante.asignaturas">
+                            <input matInput
+                            class="example-full-width"
+                            type="text" 
+                            placeholder="Asignaturas de estudiante"
+                            [(ngModel)]="estudiante.asignaturas._id"/>
+
+                            <a mat-button (click)="guardarCambios(estudiante)"> 
+                              Cambiar Id-Válido
+                            </a>
+                          </div>
+                          
+                          <div>
+                            
+                  
+                         </div>
+      </td>
+  
+    </tr>
+  
+  </table>
+
+</div>
+  
+</mat-card-content>
+</mat-card>
+
+</div>
+
+
